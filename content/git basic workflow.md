@@ -113,7 +113,7 @@ There are a few things that I didn't cover in this enty. Like how to create a [p
 
 Bellow you will find some git resources
 
-* [Setting up a repository - gitbucket][gitbucket]
+* [Setting up a repository - bitbucket][bitbucket_repo]
 * [How to set up a git repository locally and on a remote server][remote_repo]
 * [Git ignore generator][git_ignore]
 
@@ -123,7 +123,7 @@ Gonzalo Sáenz
 <!-- Links -->
 
 [git_repository]: /images/git_repository.png
-[gitbucket]: https://www.atlassian.com/git/tutorials/setting-up-a-repository
+[bitbucket_repo]: https://www.atlassian.com/git/tutorials/setting-up-a-repository
 [remote_repo]: http://blog.davidecoppola.com/2016/12/how-to-set-up-a-git-repository-locally-and-on-a-remote-server/
 [git_ignore]: https://www.gitignore.io/?templates=python "Git ignore for python projects"
 
