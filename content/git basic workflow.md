@@ -119,7 +119,7 @@ git add --help # this will list help for git add
 
 In the [references](#references) section you will find links to git resources.
 
-There are a few things that I didn't cover in this enty. Like how to create a [pelican][] blog. I might or might not cover this in a future post.
+There are a few things that I didn't cover in this entry. Like how to create a [pelican][] blog. I might or might not cover this in a future post.
 
 # References <a name="references"></a>
 
