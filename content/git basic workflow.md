@@ -12,9 +12,11 @@ This post describes a basic git workflow. This is what I follow to keep track of
 
 I will cover, how to create a [bare repository](#bare), a [local repository](#local), and the [workflow](#workflow) to make changes.
 
+All examples will be based on a [Pelican][] blog, but you can follow the same principles for any type of git repository.
+
 # Bare Repository <a name="bare"></a>
 
-The bare repository is a non working repository. It impossible to edit files and commit changes in that repository. the whole idea of a bare repository is to pull and push into it, but never directly commit into it. A bare repository is just used for storage, as oposed to a development repository.
+The bare repository is a non working repository. It's impossible to edit files and commit changes in it. The whole idea of a bare repository is to pull and push into it, but never directly commit into it. A bare repository is just used for storage, as oposed to a development repository.
 
 ![git_repository][]
 
@@ -30,7 +32,7 @@ A local repository can be created with
 git init gonzalosaenz.com
 ```
 
-This will create an empty local repository. You can create and edit files in the local repository with your favorite text editor. once you create files, they can be add those files to your git repository within
+This will create an empty local repository. You can create and edit files in the local repository with your favorite text editor. Once you create files, they can be added your git repository within
 
 ```shell
 git add .
@@ -41,14 +43,14 @@ Once you finish working on your files. you can perform a:
 ```shell
 git status
 ```
-This will list any pending changes. then you might:
+This will list any pending changes. Then you might:
 
 ```shell
 git add . # too add and pending changes
 git commit -m "commit message."
 ```
 
-This will commit your changes to your local repository. however we haven't linked yet the local and remote (bare) repositories. in order to do so,
+This will commit your changes to your local repository. However we haven't linked yet the local and remote (bare) repositories. in order to do so,
 
 ```shell
 git remote add gonzalosaenz.com me@gitserver.com:~/gonzalosaenz.com.git
@@ -72,7 +74,9 @@ origin  gonzo@gnzsnz.com:~/Documents/server/dev/gonzalosaenz.com.git (push)
 
 # Workflow <a name="workflow"></a>
 
-And finally the git workflow. So every time I write a new post, I would:
+So far we covered the steps that are required to create a bare repository and a local working repository. You only need to perform these steps once.
+
+Now we will cover the git workflow to work on your content. The steps I follow every time I write a new post, I would:
 
 1) clone a local copy of the repository:
 
@@ -81,18 +85,18 @@ git clone me@gitserver.com:~/gonzalosaenz.com.git
 cd gonzalosaenz.com
 ```
 
-2) create my working environment
+2) Create my working environment
 
 ```shell
-virtualenv .
-source bin/activate
-pip install -r requirements.txt
-make devserver
+virtualenv . # create a virtualenv for Pelican
+source bin/activate # activate the environment
+pip install -r requirements.txt # install dependencies
+make devserver # launch a local Pelican devserver
 ```
 
-3) work on your post. don't forget to save your changes!
+3) Work on your post. Don't forget to save your changes!
 
-4) commit your changes
+4) Commit your changes
 
 ```shell
 git add .
@@ -107,9 +111,17 @@ git push gonzalosaenz.com
 
 # Final thoughts
 
+You can get help for each git command by running for example:
+
+```shell
+git add --help # this will list help for git add
+```
+
+In the [references](#references) section you will find links to git resources.
+
 There are a few things that I didn't cover in this enty. Like how to create a [pelican][] blog. I might or might not cover this in a future post.
 
-# References
+# References <a name="references"></a>
 
 Bellow you will find some git resources
 
