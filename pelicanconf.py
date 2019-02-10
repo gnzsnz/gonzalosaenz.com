@@ -32,8 +32,8 @@ DEFAULT_METADATA = {
     'Status': 'draft',
 }
 
-
-THEME = '/Users/gonzo/Documents/dev/pelican-themes/theme-gonzalosaenz.com'
+THEME = 'themes/theme-gonzalosaenz.com'
+#THEME = '/Users/gonzo/Documents/dev/pelican-themes/theme-gonzalosaenz.com'
 #STATIC_PATHS = ['img', 'static']
 #FAVICON = 'img/favicon.ico'
 STATIC_PATHS = ['images']
