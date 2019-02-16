@@ -1,6 +1,6 @@
 Title: Git basic workflow
 Date: 2019-02-08 10:20
-Modified: 2019-02-08 19:30
+Modified: 2019-02-16 18:30
 Category:
 Tags: git
 Slug: git basic workflow
@@ -46,7 +46,7 @@ git status
 This will list any pending changes. Then you might:
 
 ```shell
-git add . # too add and pending changes
+git add . # too add any pending changes
 git commit -m "commit message."
 ```
 
@@ -56,7 +56,7 @@ This will commit your changes to your local repository. However we haven't linke
 git remote add gonzalosaenz.com me@gitserver.com:~/gonzalosaenz.com.git
 git push --set-upstream gonzalosaenz.com master
 ```
-In case it needs to be clarified, "me@gitserver.com:~/gonzalosaenz.com.git" is a fake repository. You can use [github][], [gitlab][], [bitbucket][], hosted it in your server, etc.
+In case it needs to be clarified, "me@gitserver.com:~/gonzalosaenz.com.git" is a fake repository. You can use [github][], [gitlab][], [bitbucket][], hosted a repository in your own (cloud) server, etc.
 
 Next step is to push your local copy of the repository to the remote repository. This will make your local changes available in the remote repository.
 
@@ -68,8 +68,8 @@ In the local repository you can query your remore repository with:
 
 ```shell
 git remote -v
-origin  gonzo@gnzsnz.com:~/Documents/server/dev/gonzalosaenz.com.git (fetch)
-origin  gonzo@gnzsnz.com:~/Documents/server/dev/gonzalosaenz.com.git (push)
+origin  me@gitserver.com:~/gonzalosaenz.com.git (fetch)
+origin  me@gitserver.com:~/gonzalosaenz.com.git (push)
 ```
 
 # Workflow <a name="workflow"></a>
