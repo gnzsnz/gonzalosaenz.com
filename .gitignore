@@ -9,6 +9,8 @@ include/
 lib/
 output/
 
+pip-selfcheck.json
+
 ## end Pelican ##
 
 ### Python ###
