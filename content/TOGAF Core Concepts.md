@@ -20,7 +20,7 @@ TOGAF Part I is an [introduction][] to TOGAF and enterprise architecture and def
 
 ## Part II - Architecture Development Method
 
-The TOGAF Architecture Development Method or ADM is the result of continuous contributions from a large number of architecture practitioners. It describes a method for developing and managing the lifecycle of an Enterprise Architecture, and forms the core of the TOGAF standard.
+The TOGAF Architecture Development Method or ADM is the result of continuous contributions from a large number of architecture practitioners. It describes a method for developing and managing the life-cycle of an Enterprise Architecture, and forms the core of the TOGAF standard.
 
 The application of the TOGAF ADM is supported by an extended set of resources, guidelines, templates, checklists, and other detailed materials:
 
@@ -66,7 +66,7 @@ Content Framework consists of:
 
 * Content Metamodel
 * Architectural artifacts
-    * View/Viespoints
+    * View/Viewpoints
     * Catalog
     * Matrix
     * Diagram
@@ -81,7 +81,7 @@ Architecture Partitioning describes the various characteristics that can be appl
 
 The Architecture Repository shows how the abstract classifications of architecture can be applied to a repository structure so that architectures can be organized and easily accessed
 
-Tools for Architecture Development provides guidelines on selecting a toolset to create and manage architectural artifacts
+Tools for Architecture Development provides guidelines on selecting a tool set to create and manage architectural artifacts
 
 ## Part VI - Reference Models
 
@@ -108,7 +108,7 @@ TRM focuses on the Application Platform space.
 
 ### Integrated Information Infrastructure Reference Model (III-RM)
 
-The III-RM is a subset of the TOGAF TRM in terms of its overall scope. III-RM address the need to design an integrated information infrastructure to enable Boundaryless Information Flow.
+The III-RM is a subset of the TOGAF TRM in terms of its overall scope. III-RM address the need to design an integrated information infrastructure to enable Boundary less Information Flow.
 
 ## Part VII - Architecture Capability Framework
 
@@ -129,7 +129,7 @@ TOGAF Architecture Capability Framework provides as well guidelines for:
 
 # Conclusion
 
-With this we conclude this quick summary of TOGAF 9 content and structure. As the reader can see TOGAF is much more than the ADM, as it provides a rich set of guidelines, techniques and frameworks for content and architecuture capabilities.
+With this we conclude this quick summary of TOGAF 9 content and structure. As the reader can see TOGAF is much more than the ADM, as it provides a rich set of guidelines, techniques and frameworks for content and architecture capabilities.
 
 That's all folks!</br>
 Gonzalo Sáenz

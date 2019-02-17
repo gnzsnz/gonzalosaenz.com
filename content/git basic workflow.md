@@ -16,7 +16,7 @@ All examples will be based on a [Pelican][] blog, but you can follow the same pr
 
 # Bare Repository <a name="bare"></a>
 
-The bare repository is a non working repository. It's impossible to edit files and commit changes in it. The whole idea of a bare repository is to pull and push into it, but never directly commit into it. A bare repository is just used for storage, as oposed to a development repository.
+The bare repository is a non working repository. It's impossible to edit files and commit changes in it. The whole idea of a bare repository is to pull and push into it, but never directly commit into it. A bare repository is just used for storage, as opposed to a development repository.
 
 ![git_repository][]
 
@@ -64,7 +64,7 @@ Next step is to push your local copy of the repository to the remote repository.
 git push gonzalosaenz.com
 ```
 
-In the local repository you can query your remore repository with:
+In the local repository you can query your remote repository with:
 
 ```shell
 git remote -v

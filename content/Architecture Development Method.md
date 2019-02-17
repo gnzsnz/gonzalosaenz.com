@@ -11,7 +11,7 @@ Summary: This post is an introduction to TOGAF Architecture Development Method (
 
 This post is an introduction to TOGAF Architecture Development Method (ADM).
 
-The TOGAF ADM is the result of continuous contributions from a large number of architecture practitioners. It describes a method for developing and managing the lifecycle of an Enterprise Architecture, and forms the core of the TOGAF standard.
+The TOGAF ADM is the result of continuous contributions from a large number of architecture practitioners. It describes a method for developing and managing the life-cycle of an Enterprise Architecture, and forms the core of the TOGAF standard.
 
 The application of the TOGAF ADM is supported by an extended set of resources, guidelines, templates, checklists, and other detailed materials. These resources can found in:
 
@@ -41,7 +41,7 @@ In this post I will summarize the different ADM phases:
 
 # ADM Guidelines and techniques
 
-TOGAF ADM is not just a methodology, it comes with full feature set of guidelines and tehcniques to apply in the architecture development cycle.
+TOGAF ADM is not just a methodology, it comes with full feature set of guidelines and techniques to apply in the architecture development cycle.
 
 Guidelines included in TOGAF Part III include:
 
@@ -78,7 +78,7 @@ The suggested ADM iterations are displayed in the image below
 ![ADM Iterations][adm_iterations]
 
 
-* **Architecture Capability** iterations support the creation1 and evolution of the required Architecture Capability
+* **Architecture Capability** iterations support the creation and evolution of the required Architecture Capability
 
     This includes the initial mobilization of the architecture activity for a given purpose or architecture engagement type by establishing or adjusting the architecture approach, principles, scope, vision, and governance.
 
@@ -86,7 +86,7 @@ The suggested ADM iterations are displayed in the image below
 
     These iterations ensure that the architecture is considered as a whole. In this type of iteration stakeholder reviews are typically broader. As the iterations converge on a target, extensions into the Opportunities & Solutions and Migration Planning phases ensure that the architecture's implementability is considered as the architecture is finalized.
 
-* **Transition Planning** iterations support the creation of formal change roadmaps for a defined architecture
+* **Transition Planning** iterations support the creation of formal change road-maps for a defined architecture
 
 * **Architecture Governance** iterations support governance of change activity progressing towards a defined Target Architecture
 
@@ -146,7 +146,7 @@ In TOGAF 9, these phases are described in a consistent manner in terms of:
 4. Develop Target
 5. Architecture Description
 6. Perform Gap Analysis
-7. Define Candidate Roadmap Components
+7. Define Candidate Road-map Components
 8. Resolve Impacts across the
 9. Architecture Landscape
 10. Conduct Formal Stakeholder Review
@@ -165,7 +165,7 @@ Business Architecture is a description of the structure and interaction between 
     * To respond to strategic drivers
     * Set out in the Architecture Vision
     * Addresses Statement of Architecture Work and stakeholder concerns
-* Identify candidate Architecture Roadmap components, based on gaps between Baseline and Target Business Architectures
+* Identify candidate Architecture Road-map components, based on gaps between Baseline and Target Business Architectures
 
 # ADM – C) Information Systems Architecture <a name="information"></a>
 
@@ -174,7 +174,7 @@ Business Architecture is a description of the structure and interaction between 
 * Develop Target Information Systems (Data and Application) Architectures
     * Enable the Business Architecture and Architecture Vision
     * Addresses Statement of Architecture Work and Stakeholder Concerns
-* Identify candidate Architecture Roadmap components
+* Identify candidate Architecture Road-map components
     * Based on gaps between Baseline and Target Information Systems Architectures
 
 Phase C : ** Approach – Data or Application Driven?**
@@ -192,7 +192,7 @@ Technology Architecture is a description of the structure and interaction of the
 * Develop Target Technology Architecture
     * Enable the Logical and Physical Application and Data components and Architecture Vision
     * Address Statement of Architecture Work and Stakeholder Concerns
-* Identify candidate Architecture Roadmap components
+* Identify candidate Architecture Road-map components
 Based on gaps between Baseline and Target Technology Architectures
 
 # ADM – E) Opportunities & Solutions <a name="opportunities"></a>
@@ -201,9 +201,9 @@ This phase describes the first phase of the ADM which is directly concerned with
 
 ** Phase E - Opportunities and Solutions - Objectives**
 
-* Generate the initial complete version of Architecture Roadmap based on outputs from Phases B, C and D
+* Generate the initial complete version of Architecture Road-map based on outputs from Phases B, C and D
     * Gap analysis
-    * Candidate Architecture Roadmap components
+    * Candidate Architecture Road-map components
 * Determine whether incremental approach is required. If so, identify Transition Architectures that will deliver continuous business value
 
 Stakeholder requirements drive the architecture focus and decision making.
@@ -214,7 +214,7 @@ This phase describes the creation of a viable Implementation and Migration Plan 
 
 ** Phase F - Migration Planning - Objectives**
 
-* Finalize Architecture Roadmap and supporting Implementation and Migration Plan
+* Finalize Architecture Road-map and supporting Implementation and Migration Plan
 * Ensure that Implementation and Migration Plan is coordinated with the enterprise’s approach to managing and implementing change in enterprise’s overall change portfolio
 * Endure that business value and cost of work packages and Transition Architectures is understood by key stakeholders
 
@@ -233,7 +233,7 @@ This phase establishes procedures for managing change to the architecture landsc
 
 **Phase H - Architecture Change Management - Objectives**
 
-* Ensure that architecture lifecycle is maintained
+* Ensure that architecture life-cycle is maintained
 * Ensure that the Architecture Governance Framework is executed
 * Ensure that the Enterprise Architecture Capability meets current requirements
 
@@ -244,7 +244,7 @@ This phase establishes procedures for managing change to the architecture landsc
 * Provides flexibility to enable the architecture to evolve rapidly to changes in the business and technology environments, for example
     - Monitoring business growth and decline
 * Leverages performance management and reporting capability of the work products to ensure effectiveness of the architecture
-* Maximising business value with a steady state Business Architecture requires continually assessments to ensure that the value is achieved.
+* Maximizing business value with a steady state Business Architecture requires continually assessments to ensure that the value is achieved.
 
 # ADM – Requirements Management <a name="requirements"></a>
 
@@ -260,7 +260,7 @@ ADM Requirements Management describes the steps taken during the continuous Requ
 
 You can find more information in [The Open Group][open_group] website. Specially in TOGAF "Part II - Architecture Development Method" and Part III "ADM Guidelines and Techniques"
 
-# Conclussion
+# Conclusion
 
 The TOGAF ADM defines a recommended sequence for the various phases and steps involved in developing an architecture, but it cannot recommend a scope - this has to be determined by the organization itself, bearing in mind that the recommended sequence of development in the ADM process is an iterative one, with the depth and breadth of scope and deliverables increasing with each iteration. Each iteration will add resources to the organization's Architecture Repository.
 

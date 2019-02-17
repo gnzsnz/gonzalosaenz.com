@@ -56,7 +56,7 @@ It's usually done to identify gaps between
 * Current state
 * Desired future state
 
-Enterprise Architecture provides roadmap for organization to:
+Enterprise Architecture provides road-map for organization to:
 
 * Achieve its goals
 * Deliver its objectives
