@@ -8,7 +8,7 @@ Authors: Gonzalo Saenz
 Status: published
 Summary: This post is an explains TOGAF ADM Preliminary Phase
 
-Preliminary phase describes the preparation and initiation activities required to meet the business directive for a new Enterprise Architecture, including the definition of an Organization-Specific Architecture framework and the definition of principles.
+Preliminary phase describes the preparation and initiation activities required to meet the business directive for a new Enterprise Architecture, including the definition of an Organization-Specific Architecture framework and the [definition of principles](#arch_principles).
 
 I will follow TOGAF structure to describe ADM phases:
 
@@ -29,13 +29,13 @@ The objectives of the Preliminary Phase are to:
     * Review the organizational context for conducting Enterprise Architecture
     * Identify and scope the elements of the enterprise organizations affected by the Architecture Capability
     * Identify the established frameworks, methods, and processes that intersect with the Architecture Capability
-    * Establish Capability Maturity target
+    * Establish [Capability Maturity](#maturity_models) target
 
 2. Establish the Architecture Capability:
     * Define and establish the Organizational Model for Enterprise Architecture
     * Define and establish the detailed process and resources for Architecture Governance
     * Select and implement tools that support the Architecture Capability
-    * Define the Architecture Principles
+    * Define the [Architecture Principles](#arch_principles)
 
 # Preliminary Phase Inputs <a name="inputs"></a>
 
@@ -60,7 +60,7 @@ The objectives of the Preliminary Phase are to:
         * Architecture method
         * Architecture content
         * Configured and deployed tools
-        * Architecture Principles
+        * [Architecture Principles](#arch_principles)
         * Architecture Repository
 
 
@@ -71,7 +71,7 @@ The steps within the Preliminary Phase are as follows:
 1. Scope the Enterprise Organizations Impacted
 2. Confirm Governance and Support Frameworks
 3. Define and Establish Enterprise Architecture Team and Organization
-4. Identify and Establish Architecture Principles
+4. Identify and Establish [Architecture Principles](#arch_principles)
 5. Tailor the TOGAF Framework and, if any, Other Selected Architecture Framework(s)
 6. Develop a Strategy and Implementation Plan for Tools and Techniques
 
@@ -102,7 +102,7 @@ The outputs of the Preliminary Phase may include, but are not restricted to:
 The outputs may include some or all of the following:
 
 * Catalogs:
-    - Principles catalog
+    - [Principles catalog](#arch_principles)
 
 # Preliminary Phase Approach <a name="approach"></a>
 
@@ -111,17 +111,18 @@ Preliminary Phase is about defining "where, what, why, who, and how we do archit
 * Defining the enterprise
 * Identifying key drivers and elements in the organizational context
 * Defining the requirements for architecture work
-* Defining the Architecture Principles that will inform any architecture work
+* Defining the [Architecture Principles](#arch_principles) that will inform any architecture work
 * Defining the framework to be used
 * Defining the relationships between management frameworks
-* Evaluating the Enterprise Architecture maturity
+* Evaluating the [Enterprise Architecture maturity](#maturity_models)
 
 
 # References
 
 You can find more information in [The Open Group][togaf_preliminary] website. Specially in TOGAF "Part II - Architecture Development Method", chapter 5 Preliminary Phase
 
-* [Architecture Principles][principles]
+* [Architecture Principles][principles] <a name="arch_principles"></a>
+* [Architecture Maturity Models][maturity] <a name="maturity_models"></a>
 * [TOGAF template deliverables - Set 1][togaf_deliverables1]
 * [TOGAF template deliverables - Set 2][togaf_deliverables2]
 
@@ -132,3 +133,4 @@ You can find more information in [The Open Group][togaf_preliminary] website. Sp
 [principles]: http://pubs.opengroup.org/architecture/togaf92-doc/arch/chap20.html#tag_20 "Architecture Principles"
 [togaf_deliverables1]: https://publications.opengroup.org/i092 "TOGAF 9 template deliverables - set 1"
 [togaf_deliverables2]: https://publications.opengroup.org/i093 "TOGAF 9 template deliverables - set 2"
+[maturity]: http://pubs.opengroup.org/architecture/togaf92-doc/arch/chap45.html#tag_45 "Architecture Maturity Models"
