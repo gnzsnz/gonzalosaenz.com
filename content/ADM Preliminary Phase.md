@@ -119,13 +119,16 @@ Preliminary Phase is about defining "where, what, why, who, and how we do archit
 
 # References
 
+You can find more information in [The Open Group][togaf_preliminary] website. Specially in TOGAF "Part II - Architecture Development Method", chapter 5 Preliminary Phase
+
 * [Architecture Principles][principles]
 * [TOGAF template deliverables - Set 1][togaf_deliverables1]
 * [TOGAF template deliverables - Set 2][togaf_deliverables2]
 
 <!-- Links -->
 
-[ADM_preliminary]: http://pubs.opengroup.org/architecture/togaf92-doc/arch/Figures/prelim.png "ADM Preliminra Phase"
+[togaf_preliminary]: http://pubs.opengroup.org/architecture/togaf92-doc/arch/chap05.html "Chapter 5 Preliminary Phase"
+[ADM_preliminary]: /images/prelim.png "ADM Preliminary Phase"
 [principles]: http://pubs.opengroup.org/architecture/togaf92-doc/arch/chap20.html#tag_20 "Architecture Principles"
 [togaf_deliverables1]: https://publications.opengroup.org/i092 "TOGAF 9 template deliverables - set 1"
 [togaf_deliverables2]: https://publications.opengroup.org/i093 "TOGAF 9 template deliverables - set 2"
