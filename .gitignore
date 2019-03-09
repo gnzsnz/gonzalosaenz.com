@@ -13,6 +13,11 @@ pip-selfcheck.json
 
 ## end Pelican ##
 
+# Vagrant
+.vagrant/
+nohup.out
+*-cloudimg-console.log
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
