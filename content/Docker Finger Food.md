@@ -10,9 +10,23 @@ Summary: This post cover bits and pieces of docker. I plan to update it as I go.
 
 # Docker Finger Food
 
-Below you will find docker finger food.
+Below you will find docker finger food. This is and will always be work in progress.
 
+<!-- TOC -->
 
+- [Docker Finger Food](#docker-finger-food)
+  - [Use an APT proxy from a container](#use-an-apt-proxy-from-a-container)
+  - [Delete dangling images](#delete-dangling-images)
+  - [Don't install apt ecommends](#dont-install-apt-ecommends)
+  - [Non interactive apt](#non-interactive-apt)
+  - [Clean up your apt cache](#clean-up-your-apt-cache)
+  - [Clean up your pip cache](#clean-up-your-pip-cache)
+  - [Docker build](#docker-build)
+  - [Docker run](#docker-run)
+  - [Docker exec](#docker-exec)
+  - [Docker prune](#docker-prune)
+
+<!-- /TOC -->
 
 ## Use an APT proxy from a container
 
@@ -27,13 +41,13 @@ RUN echo 'Acquire::http { Proxy "http:'$APT_PROXY'"; }'  \
     apt-get update -y && apt-get -y install ...
 ```
 
-Then when you build your docker image,
+Then, when you build your docker image,
 ```sh
 docker build \
-  --build-arg APT_PROXY="http://apt-cacher:3142" you/image .
+  --build-arg APT_PROXY="http://apt-cacher:3142" -t you/image .
 ```
 
-Credit --> [run apt-get with proxy in Dockerfile](https://stackoverflow.com/questions/48749200/run-apt-get-with-proxy-in-dockerfile).
+Credit --> [run apt-get with proxy in Dockerfile](https://stackoverflow.com/questions/48749200/run-apt-get-with-proxy-in-dockerfile). To install your apt-cacher container you can try [this one](https://github.com/sameersbn/docker-apt-cacher-ng), or [this other one](https://github.com/menghan/docker-image-apt-cacher-ng), our just build your own.
 
 ## Delete dangling images
 
