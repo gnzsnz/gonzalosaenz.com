@@ -40,7 +40,7 @@ STATIC_PATHS = ['images']
 
 
 # Social widget
-SOCIAL = (('Gonzalo Saenz on Linedin', 'https://www.linkedin.com/in/gonzalosaenzdequiroz/'),
+SOCIAL = (('Gonzalo Saenz on LinkedIn', 'https://www.linkedin.com/in/gonzalosaenzdequiroz/'),
         ('Follow me @gnzsnz', 'https://twitter.com/gnzsnz'),)
 
 TWITTER_USERNAME='gnzsnz'

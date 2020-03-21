@@ -5,7 +5,7 @@ Category: Misc
 Tags: virsh
 Slug: Manage remote VMs with virsh
 Authors: Gonzalo Saenz
-Status: draft
+Status: published
 Summary: This post will go through the steps to manage a VM running on a remote host with virsh.
 
 The objective of this post is to describe the steps needed to manage a VM running on a remote KVM host.
@@ -50,10 +50,15 @@ virsh # quit
 
 ## Automating the boring stuff
 
-You can define your default hypervisor in libvirt configurations file `/etc/libvirt/libvirt.conf`
+You can define your default hypervisor in libvirt configurations file `~/.local/etc/libvirt/libvirt.conf`
 
 ```sh
-nano /etc/libvirt/libvirt.conf
+echo "XDG_CONFIG_HOME=~/.local/etc/" >> ~/.bashrc
+export XDG_CONFIG_HOME=~/.local/etc/
+```
+
+```sh
+nano ~/.local/etc/libvirt/libvirt.conf
 
 uri_aliases = ["hypervisor=qemu+ssh://devops@hypervisor:/system"]
 uri_default = "qemu+ssh://devops@hypervisor:/system"
@@ -61,8 +66,8 @@ uri_default = "qemu+ssh://devops@hypervisor:/system"
 
 Once you have defined your defaults you can manage your VMs with:
 ```sh
-virsh
-virsh --connect hypervisor
+virsh # to use uri_default
+virsh --connect hypervisor # to use uri_aliases
 ```
 
 ## References
