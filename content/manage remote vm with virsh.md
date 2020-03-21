@@ -11,6 +11,7 @@ Summary: This post will go through the steps to manage a VM running on a remote 
 The objective of this post is to describe the steps needed to manage a VM running on a remote KVM host.
 
 Prerequisites:
+
 * running KVM remote hypervisor
 * have a remote VM on the hypervisor
 * ssh access to the hypervisor
