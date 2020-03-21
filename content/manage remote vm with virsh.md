@@ -67,6 +67,5 @@ virsh --connect hypervisor
 
 ## References
 * [virsh man page](https://manpages.ubuntu.com/manpages/bionic/man1/virsh.1.html)
-* https://libvirt.org/remote.html
-* https://libvirt.org/remote.html
+* libvirt official documentation for [URIs](https://libvirt.org/uri.html) and [remote connections](https://libvirt.org/remote.html)
 * [Red Hat's excellent libvirt documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/chap-Remote_management_of_guests#form-Transport_modes-Remote_URIs)
