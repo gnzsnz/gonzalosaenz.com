@@ -1,7 +1,7 @@
 Title: Docker Finger Food
 Date: 2020-03-19
 Modified: 2020-03-19
-Category: misc
+Category: Misc
 Tags: docker
 Slug: Docker Finger Food
 Authors: Gonzalo Saenz
@@ -59,7 +59,7 @@ docker rmi $(docker images -q --filter "dangling=true")
 
 Credit -->[Dangling images](https://takacsmark.com/dockerfile-tutorial-by-example-dockerfile-best-practices-2018/#dangling-images)
 
-## Don't install apt ecommends
+## Don't install apt recommends
 
 In your `Dockerfile`
 ```sh
@@ -89,7 +89,7 @@ RUN apt-get update && \
 RUN python -m pip install --no-cache-dir --upgrade pip \
   pip intall --no-cache-dir request
 ```
-
+## Manage application logs
 
 ## Docker build
 

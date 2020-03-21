@@ -1,14 +1,14 @@
 Title: Guacamole Docker containers
 Date: 2020-03-15
 Modified: 2020-03-15
-Category: misc
+Category: Misc
 Tags: Guacamole, VNC, SSL, RDP
 Slug: Guacamole
 Authors: Gonzalo Saenz
 Status: published
 Summary: This post explain how to install and configure Guacamole using Docker
 
-Apache Guacamole is a clientless remote desktop gateway. It supports protocols like VNC, RDP, and SSH. Once Guacamole is installed on a server, all you need to access your desktops is a web browser.
+Apache Guacamole is a client-less remote desktop gateway. It supports protocols like VNC, RDP, and SSH. Once Guacamole is installed on a server, all you need to access your desktops is a web browser.
 
 Guacamole can be deployed using Docker, removing the need to build guacamole-server from source or configure the web application manually. The Guacamole project provides officially-supported Docker images for both Guacamole and guacd which are kept up-to-date with each release.
 
@@ -66,7 +66,7 @@ docker run --name guacamole                \
     -d -p 8180:8080 guacamole/guacamole
 ```
 
-At this point you will have a working Guacamole set of containers that are able to authenticate to a PostgreSQL database. You can login to Guacamole with your web browser to your server url, for example http://localhost:8180 (note that I exposed port 8180, as 8080 is already taken in my server). The defaul user is guacadmin with password guacadmin. You should log in and change your password immediately.
+At this point you will have a working Guacamole set of containers that are able to authenticate to a PostgreSQL database. You can login to Guacamole with your web browser to your server URL, for example http://localhost:8180 (note that I exposed port 8180, as 8080 is already taken in my server). The default user is guacadmin with password guacadmin. You should log in and change your password immediately.
 
 In case you need to troubleshoot your guacamole container, you can
 ```sh
@@ -119,7 +119,7 @@ You need to setup mod_proxy_wstunnel as well
 ```
 The `Location` section for `/guacamole/websocket-tunnel` must be placed after the Location section for the rest of Guacamole.
 
-Once your apache configuration is udpated you need to reload it.
+Once your apache configuration is updated you need to reload it.
 ```sh
 sudo systemctl reload apache2.service
 ```

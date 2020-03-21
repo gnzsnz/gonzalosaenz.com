@@ -1,7 +1,7 @@
 Title: Git basic workflow
 Date: 2019-02-08 10:20
 Modified: 2019-02-16 18:30
-Category:
+Category: Misc
 Tags: git
 Slug: git basic workflow
 Authors: Gonzalo Saenz
