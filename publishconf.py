@@ -30,4 +30,5 @@ DEFAULT_METADATA = {
 
 #DISQUS_SITENAME = ""
 #GOOGLE_ANALYTICS = ""
-SCHNACK = "http://osvaldo.local:3000/embed.js"
+SCHNACK = "https://comments.gonzalosaenz.com/embed.js"
+TWITTER_USERNAME='gnzsnz'

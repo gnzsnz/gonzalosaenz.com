@@ -47,7 +47,7 @@ TWITTER_USERNAME='gnzsnz'
 
 DEFAULT_PAGINATION = 10
 
-SCHNACK = "http://osvaldo.local:3000/embed.js"
+SCHNACK = "https://comments.gonzalosaenz.com/embed.js"
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
