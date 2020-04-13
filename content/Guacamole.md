@@ -2,7 +2,7 @@ Title: Guacamole Docker containers
 Date: 2020-03-15
 Modified: 2020-03-15
 Category: Misc
-Tags: Guacamole, VNC, SSL, RDP
+Tags: Guacamole, VNC, SSL, RDP, docker
 Slug: Guacamole
 Authors: Gonzalo Saenz
 Status: published

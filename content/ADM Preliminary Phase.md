@@ -1,12 +1,12 @@
 Title: TOGAF - ADM Preliminary Phase
 Date: 2019-02-17
-Modified: 2019-02-17
+Modified: 2020-04-13
 Category: Enterprise Architecture
 Tags: TOGAF, Enterprise Architecture
 Slug: TOGAF - ADM Preliminary Phase
 Authors: Gonzalo Saenz
 Status: published
-Summary: This post is an explains TOGAF ADM Preliminary Phase
+Summary: This post explains TOGAF ADM Preliminary Phase. It covers Preliminary phase objectives, inputs, steps, outputs and approach.
 
 Preliminary phase describes the preparation and initiation activities required to meet the business directive for a new Enterprise Architecture, including the definition of an Organization-Specific Architecture framework and the [definition of principles](#arch_principles).
 

@@ -23,6 +23,21 @@
       {% include 'article_infos.html' %}
       {{ article.content }}
     </div><!-- /.entry-content -->
+
+    {% if SCHNACK and SITEURL and article.status != "draft" %}
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div class="comments-go-here"></div>
+      <script src="{{ SCHNACK }}"
+          data-schnack-slug="{{ article.url }}"
+          data-schnack-target=".comments-go-here">
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+    {% endif %}
+
+
     {% if DISQUS_SITENAME and SITEURL and article.status != "draft" %}
     <div class="comments">
       <h2>Comments !</h2>
