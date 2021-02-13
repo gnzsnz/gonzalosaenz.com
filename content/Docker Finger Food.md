@@ -96,7 +96,7 @@ RUN python -m pip install --no-cache-dir --upgrade pip \
 
 In this section I will go through the steps to set up the JSON logging driver. There are multiple options to setup logging drivers, please see reference below.
 
-First you need to setup the docker daemon logging. To do this you need to edit the `/etc/docker/daemon.json` which is the default location for linux systems. 
+First you need to setup the docker daemon logging. To do this you need to edit the `/etc/docker/daemon.json` which is the default location for linux systems.
 
 ```json
 {
@@ -106,8 +106,6 @@ First you need to setup the docker daemon logging. To do this you need to edit t
     "max-size": "5m",
     "max-file": "5",
   	"compress": "true"
-    "mode": "non-blocking"
-    "max-buffer-size": "4m"
   }
 }
 ```
@@ -136,8 +134,8 @@ services:
       options:
         max-size: "5m"
         max-file: "5"
-        compress: "true",
-    		mode: "non-blocking",
+        compress: "true"
+    		mode: "non-blocking"
     		max-buffer-size": "4m"
 ```
 
@@ -279,7 +277,6 @@ This will keep the postgres user name within the container, and align the uid an
 
 **References**:
 
-* [Understanding how uid and gid work in Docker containers](Understanding how uid and gid work in Docker containers), 
+* [Understanding how uid and gid work in Docker containers](Understanding how uid and gid work in Docker containers),
 * [How to add users to a container](https://stackoverflow.com/questions/27701930/add-user-to-docker-container)
 * [How to Change a USER and GROUP ID on Linux For All Owned Files](https://www.cyberciti.biz/faq/linux-change-user-group-uid-gid-for-all-owned-files/)
-
