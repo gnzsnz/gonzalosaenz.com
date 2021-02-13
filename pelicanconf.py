@@ -20,22 +20,24 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-#LINKS = (('Pelican', 'http://getpelican.com/'),
+# LINKS = (('Pelican', 'http://getpelican.com/'),
 #         ('Python.org', 'http://python.org/'),
 #         ('Jinja2', 'http://jinja.pocoo.org/'),
 #         ('You can modify those links in your config file', '#'),)
-#LINKS = (('Text', 'http://text.com'),
-        #('Python.org', 'http://python.org/'),
-        #)
+# LINKS = (('Text', 'http://text.com'),
+#          ('Python.org', 'http://python.org/'),
+#         )
+
 # to publish change article status to Status: published
 DEFAULT_METADATA = {
     'Status': 'draft',
 }
 
-THEME = 'themes/theme-gonzalosaenz.com'
-#THEME = '/Users/gonzo/Documents/dev/pelican-themes/theme-gonzalosaenz.com'
-#STATIC_PATHS = ['img', 'static']
-#FAVICON = 'img/favicon.ico'
+THEME = 'themes/built-texts'
+# THEME = 'themes/theme-gonzalosaenz.com'
+# THEME = '/Users/gonzo/Documents/dev/pelican-themes/theme-gonzalosaenz.com'
+# STATIC_PATHS = ['img', 'static']
+# FAVICON = 'img/favicon.ico'
 STATIC_PATHS = ['images']
 
 

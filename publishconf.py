@@ -28,7 +28,8 @@ DEFAULT_METADATA = {
 
 # Following items are often useful when publishing
 
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+# DISQUS_SITENAME = ""
+# GOOGLE_ANALYTICS = ""
+# Schnack powered comments
 SCHNACK = "https://comments.gonzalosaenz.com/embed.js"
-TWITTER_USERNAME='gnzsnz'
+TWITTER_USERNAME = 'gnzsnz'

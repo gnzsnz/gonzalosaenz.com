@@ -1,0 +1,12 @@
+{% if SCHNACK and SITEURL and article.status != "draft" %}
+
+<div class="comments">
+  <div class="comments-go-here"></div>
+  <script src="{{ SCHNACK }}"
+      data-schnack-slug="{{ article.url }}"
+      data-schnack-target=".comments-go-here">
+  </script>
+  <noscript>Please enable JavaScript to view the comments.</noscript>
+</div>
+
+{% endif %}

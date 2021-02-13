@@ -29,7 +29,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider :virtualbox do |vb, override|
 
     # The Virtualbox image
-    override.vm.box = "ubuntu/bionic64"
+    override.vm.box = "ubuntu/focal64"
     #override.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     # Port forwarding details
@@ -50,16 +50,15 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell",
     inline: <<-SCRIPT
     # prepare dev enviroment
-    sudo apt update
-    sudo apt install -y python3-pip
-    sudo -H pip3 install --upgrade pip
-    sudo pip3 install virtualenv
+    echo 'Acquire::http { Proxy "192.168.1.2"; }' | sudo tee /etc/apt/apt.conf.d/01proxy
+    sudo apt-get update
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y python3-venv python3-wheel
 
     # install Pelican dependencies
     cd /vagrant
-    virtualenv -p python3 .
+    python3 -m venv .
     source bin/activate
-    pip3 install -r requirements.txt
+    python3 -m pip install --no-cache-dir -r requirements.txt
 
     SCRIPT
 
@@ -70,9 +69,8 @@ Vagrant.configure("2") do |config|
     cd /vagrant
     source bin/activate
     echo "starting Pelican ..."
-    nohup make devserver & sleep 1
+    nohup pelican -lr content/ -o output/ -s pelicanconf.py & sleep 1
     echo "Pelican started."
     SCRIPT2
-
 
 end
