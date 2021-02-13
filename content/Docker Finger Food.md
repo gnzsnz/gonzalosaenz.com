@@ -136,7 +136,7 @@ services:
         max-file: "5"
         compress: "true"
     		mode: "non-blocking"
-    		max-buffer-size": "4m"
+    		max-buffer-size: "4m"
 ```
 
 
