@@ -1,6 +1,6 @@
 Title: Docker Finger Food
 Date: 2020-03-19
-Modified: 2020-04-12
+Modified: 2021-02-13
 Category: Misc
 Tags: docker
 Slug: Docker Finger Food
@@ -10,7 +10,7 @@ Summary: This post cover bits and pieces of docker. I plan to update it as I go.
 
 # Docker Finger Food
 
-Below you will find docker finger food. This is and will always be work in progress.
+Below you will find docker finger food. This is and will always be a work in progress post.
 
 <!-- TOC -->
 
@@ -20,11 +20,13 @@ Below you will find docker finger food. This is and will always be work in progr
 - [Non interactive apt](#non-interactive-apt)
 - [Clean up your apt cache](#clean-up-your-apt-cache)
 - [Clean up your pip cache](#clean-up-your-pip-cache)
+- [Manager application logs](#app-logs)
 - [Docker build](#docker-build)
 - [Docker run](#docker-run)
 - [Docker exec](#docker-exec)
 - [Docker prune](#docker-prune)
 - [Docker useradd](#docker-useradd)
+- [Docker config](#docker-config)
 
 <!-- /TOC -->
 
@@ -90,9 +92,62 @@ RUN apt-get update && \
 RUN python -m pip install --no-cache-dir --upgrade pip \
   pip install --no-cache-dir request
 ```
-## Manage application logs
+## Manage application logs <a name="app-logs"></a>
 
-WIP
+In this section I will go through the steps to set up the JSON logging driver. There are multiple options to setup logging drivers, please see reference below.
+
+First you need to setup the docker daemon logging. To do this you need to edit the `/etc/docker/daemon.json` which is the default location for linux systems. 
+
+```json
+{
+  "log-driver": "json-file",
+  "log-level": "info",
+  "log-opts": {
+    "max-size": "5m",
+    "max-file": "5",
+  	"compress": "true"
+    "mode": "non-blocking"
+    "max-buffer-size": "4m"
+  }
+}
+```
+
+This is telling the docker daemon to user json-file as logging driver, max log file size 5MB, i till rotate logs and keep 5 files, and will use compression for rotated files.
+
+Once he `daemon.json` file is updated, you need to restart dockerd. Any new container  will use these settings. All the previously created containers will use previous settings (most probably default settings.)
+
+Another aspect to configure is the log delivery mode from the container to the log driver
+
+```sh
+docker run -it --log-opt mode=non-blocking --log-opt max-buffer-size=4m ubuntu tail -f /var/log/syslog
+```
+
+The command above is using the `non-blocking` mode which is NOT the default, and using buffer of 4MB. The `non-blocking` mode stores log messages in an intermediate per-container ring buffer for consumption by driver. While `direct` is blocking and delivers directly to the driver.
+
+In docker-compose you would do:
+
+```yaml
+version: "3.9"
+services:
+  some-service:
+    image: some-service
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "5"
+        compress: "true",
+    		mode: "non-blocking",
+    		max-buffer-size": "4m"
+```
+
+
+
+Reference:
+
+* [Docker daemon logging](https://docs.docker.com/config/containers/logging/configure/)
+* [JSON logging driver](https://docs.docker.com/config/containers/logging/json-file/)
+* [Docker compose logging]()
 
 ## Docker build <a name="docker-build"></a>
 
@@ -101,7 +156,7 @@ Docker build cheat-sheet
 ```sh
 docker build -t user/image .
 ```
-`-t`parameter will set the image name in the user/image fashion. This is telling docker to build an image based on the Dockerfile in the current directory ".".
+`-t` parameter will set the image name in the user/image fashion. This is telling docker to build an image based on the Dockerfile in the current directory ".".
 
 ## Docker run <a name="docker-run"></a>
 
@@ -139,19 +194,40 @@ docker volume prune
 
 ## Docker useradd <a name="docker-useradd"></a>
 
-[Source](https://stackoverflow.com/questions/27701930/add-user-to-docker-container)
+To manage container user and uid/gid is tricky. There are different alternatives, like using the `--user` parameter. However this is not dealing with containers `/etc/passwd` so your container user will be homeless and `whoami` will not work. So usually I try to solve the problem at build time. See below
+
 ```sh
-RUN useradd -rm -d /home/ubuntu -s /bin/bash -G sudo -u 1000 ubuntu
-USER ubuntu
-WORKDIR /home/ubuntu
+ARG USER
+ARG USER_ID=1000
+ARG USER_GID=1000
+ARG BASEPATH=/opt/app
+RUN groupadd --gid "${USER_GID}" "${USER}" && \
+  useradd -ms /bin/bash --uid ${USER_ID} --gid ${USER_GID} ${USER} &&\
+  echo "${USER} ALL=(ALL) NOPASSWD:ALL" | tee -a /etc/sudoers &&\
+  mkdir ${BASEPATH} && chown ${USER}:${USER} -R ${BASEPATH}
+
+WORKDIR ${BASEPATH}
+USER ${USER}
+COPY --chown=${USER}:${USER} . .
+```
+
+This will create a user based on environment variables passed at build time. And set the permissions on the image filesystem.
+
+```sh
+docker build -t user/image \
+--build-arg USER=username \
+--build-arg USER_ID=$(id -u username) \
+--build-arg USER_GID=$(id -g username) \
+.
 ```
 
 Then when you run the containers
+
 ```sh
-docker run -it --user dockworker:dockworker container_name
+docker run -it container_name
 
 # to use current user
-docker run -it --user $(id -u):$(id -g) container_name
+docker run -it container_name
 ```
 In docker compose
 
@@ -160,11 +236,50 @@ In docker compose
 version: '3.3'
 services:
   app:
+  	build:
+  		context: .
+      args:
+        USER: $USER
+        USER_ID: $USER_ID
+        USER_GID: $USER_GID
     image: user/image:tag
-  user: ${UID}
+    container_name: "container"
 ```
 
+This will require an `.env` file in the working directory.
+
+````sh
+USER=dockeruser
+USER_ID=1000
+USER_GID=1000
+````
+
 Then run composer like this,
+
 ```sh
-UID=$(id -u):$(id -g) docker-compose up
+docker-compose up
 ```
+
+When I'm working on top of an existing build, for example for PostgreSQL, I would build my image
+
+```sh
+FROM postgres:last
+ARG UID
+ARG GID
+ARG OLD_UID
+ARG OLD_GID
+RUN usermod -u $UID postgres && \
+		groupmod -g $GID postgres && \
+		find / -group $OLD_GID -exec chgrp -h postgres {} && \
+		find / -user $OLD_UID -exec chown -h postgres {}
+
+```
+
+This will keep the postgres user name within the container, and align the uid and gid with the host filesystem.
+
+**References**:
+
+* [Understanding how uid and gid work in Docker containers](Understanding how uid and gid work in Docker containers), 
+* [How to add users to a container](https://stackoverflow.com/questions/27701930/add-user-to-docker-container)
+* [How to Change a USER and GROUP ID on Linux For All Owned Files](https://www.cyberciti.biz/faq/linux-change-user-group-uid-gid-for-all-owned-files/)
+
