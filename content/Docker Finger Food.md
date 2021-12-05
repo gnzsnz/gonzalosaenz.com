@@ -26,7 +26,7 @@ Below you will find docker finger food. This is and will always be a work in pro
 - [Docker exec](#docker-exec)
 - [Docker prune](#docker-prune)
 - [Docker useradd](#docker-useradd)
-- [Docker config](#docker-config)
+- [Export and Export](#docker-export-import)
 
 <!-- /TOC -->
 
@@ -38,15 +38,15 @@ In your ´Dockerfile´
 
 ```sh
 ARG APT_PROXY
-RUN echo 'Acquire::http { Proxy "http:'$APT_PROXY'"; }'  \
-    | tee /etc/apt/apt.conf.d/01proxy \
-    apt-get update -y && apt-get -y install ...
+RUN echo 'Acquire::http { Proxy "'$APT_PROXY'"; }'  \
+    | tee /etc/apt/apt.conf.d/01proxy &&\
+    apt-get update && apt-get -y install ...
 ```
 
 Then, when you build your docker image,
 ```sh
 docker build \
-  --build-arg APT_PROXY="http://apt-cacher:3142" -t you/image .
+  --build-arg APT_PROXY="http://apt-cacher:3142" -t your/image .
 ```
 
 Credit --> [run apt-get with proxy in Dockerfile](https://stackoverflow.com/questions/48749200/run-apt-get-with-proxy-in-dockerfile). To install your apt-cacher container you can try [this one](https://github.com/sameersbn/docker-apt-cacher-ng), or [this other one](https://github.com/menghan/docker-image-apt-cacher-ng), our just build your own.
@@ -268,8 +268,8 @@ ARG OLD_UID
 ARG OLD_GID
 RUN usermod -u $UID postgres && \
 		groupmod -g $GID postgres && \
-		find / -group $OLD_GID -exec chgrp -h postgres {} && \
-		find / -user $OLD_UID -exec chown -h postgres {}
+		find / -group $OLD_GID -exec chgrp -h postgres {} + && \
+		find / -user $OLD_UID -exec chown -h postgres {} +
 
 ```
 
@@ -280,3 +280,18 @@ This will keep the postgres user name within the container, and align the uid an
 * [Understanding how uid and gid work in Docker containers](Understanding how uid and gid work in Docker containers),
 * [How to add users to a container](https://stackoverflow.com/questions/27701930/add-user-to-docker-container)
 * [How to Change a USER and GROUP ID on Linux For All Owned Files](https://www.cyberciti.biz/faq/linux-change-user-group-uid-gid-for-all-owned-files/)
+
+## Export and Import <a name="#docker-export-import"></a>
+
+To export a container into a tarball
+
+```sh
+docker export container_name | gzip > container_name.tgz
+```
+
+To import the tarball
+
+```sh
+zcat container_name.tgz | docker import - container_name
+docker run -i -t container_name bash
+```
