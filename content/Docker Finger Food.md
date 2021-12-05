@@ -281,7 +281,7 @@ This will keep the postgres user name within the container, and align the uid an
 * [How to add users to a container](https://stackoverflow.com/questions/27701930/add-user-to-docker-container)
 * [How to Change a USER and GROUP ID on Linux For All Owned Files](https://www.cyberciti.biz/faq/linux-change-user-group-uid-gid-for-all-owned-files/)
 
-## Export and Import <a name="#docker-export-import"></a>
+## Export and Import <a name="docker-export-import"></a>
 
 To export a container into a tarball
 
